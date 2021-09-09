@@ -16,7 +16,6 @@ public class Main implements ActionListener{
         frame.setSize(800, 500);
         frame.setLayout(new BorderLayout(10,10));
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
 
         GridBagLayout numlay = new GridBagLayout();
         GridBagConstraints c = new GridBagConstraints();
@@ -139,6 +138,7 @@ public class Main implements ActionListener{
         panel.add(point,c);
 
         frame.add(panel, BorderLayout.CENTER);
+        frame.setVisible(true);
 
     }
 
@@ -148,6 +148,6 @@ public class Main implements ActionListener{
     }
 
     public static void main(String[] args) {
-        Main main = new Main();
+        Main Main = new Main();
     }
 }
