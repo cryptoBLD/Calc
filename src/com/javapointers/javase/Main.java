@@ -1,11 +1,19 @@
 package com.javapointers.javase;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import java.nio.charset.Charset;
 
 public class Main implements ActionListener{
+
+    String press3 = "";
+    int press1 = 0;
+    int press2 = 0;
+    int txt = 0;
+
+    private int amount = 0;
 
     JFrame frame;
     JLabel label;
@@ -144,7 +152,39 @@ public class Main implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        switch (amount) {
+            case 0:
+                press1 = Integer.parseInt(e.getActionCommand());
+                amount++;
+                System.out.println(press1);
+                break;
+            case 1:
+                press2 = Integer.parseInt(e.getActionCommand());
+                amount++;
+                System.out.println(press2);
+                break;
+            case 2:
+                press3 = e.getActionCommand();
+                amount++;
+                switch (press3) {
+                    case "-":
+                        txt = press1 - press2;
+                        break;
+                    case "+":
+                        txt = press1 + press2;
+                        break;
+                    case "/":
+                        txt = press1 / press2;
+                        break;
+                    case "*":
+                        txt = press1 * press2;
+                        break;
 
+                }
+                label.setText(String.valueOf(txt));
+                System.out.println(txt);
+                amount = 0;
+        }
     }
 
     public static void main(String[] args) {
