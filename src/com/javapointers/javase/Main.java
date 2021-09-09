@@ -156,12 +156,10 @@ public class Main implements ActionListener{
             case 0:
                 press1 = Integer.parseInt(e.getActionCommand());
                 amount++;
-                System.out.println(press1);
                 break;
             case 1:
                 press2 = Integer.parseInt(e.getActionCommand());
                 amount++;
-                System.out.println(press2);
                 break;
             case 2:
                 press3 = e.getActionCommand();
@@ -182,12 +180,16 @@ public class Main implements ActionListener{
 
                 }
                 label.setText(String.valueOf(txt));
-                System.out.println(txt);
                 amount = 0;
         }
     }
 
     public static void main(String[] args) {
-        Main Main = new Main();
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Main Main = new Main();
+            }
+
+        });
     }
 }
